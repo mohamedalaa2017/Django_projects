@@ -1,0 +1,57 @@
+{% extends "task/layout.html" %}
+
+{% block title %}
+    task
+{% endblock %}
+{% block style %}
+    <style>
+        .clear-task {
+            margin-top: -8px;
+        }
+        .clear-task  input{
+            text-decoration: none;
+            font-size: 20px;
+            background-color: rgb(19, 67, 122);
+            color: white;
+            padding: 5px;
+            border: 2px solid white;
+            border-radius: 8px;
+        }
+        .clear-task  input:hover{
+            background-color: rgb(87, 184, 160);
+            color: rgb(19, 67, 122);
+        }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1 class="head"> task </h1>
+    </div>
+    
+    <div class="container">
+        <div class="tasks">
+            <ul>
+                {% for task in tasks %}
+                    <li> {{task}} </li>  
+                {% empty %} 
+                    <li> empty tasks. </li>
+                    
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="add-task">
+            <a href="{% url 'tasks:add' %}"> add task </a>
+        </div>
+
+        <div class="clear-task">
+            <form action="{% url 'tasks:index' %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="clear tasks">
+            </form>         
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+
+h1 {
+    text-align: center;
+    color: gray;
+    font-size: 40px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    
+}
+.container .add-task {
+    margin-left: 100px;
+}
+.container .add-task a {
+    text-decoration: none;
+    font-size: 20px;
+    background-color: rgb(19, 67, 122);
+    color: white;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+.container .add-task a:hover {
+    background-color: rgb(87, 184, 160);
+    color: rgb(19, 67, 122);
+}
+
